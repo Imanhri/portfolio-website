@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAN HEYDARI | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Allgemeine Seitenstile */
+        body {
+            font-family: 'Inter', sans-serif;
+            width: 100vw;
+            overflow-x: hidden;
+            user-select: none;
+            color: #1a1a1a;
+            position: relative;
+            background-color: #111111;
+        }
+
+        /* Hero Section Container */
+        .hero-section {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            background-image: url('portfolio_header _photo2.jpg');
+        }
+
+        .bottom-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 33.333333%;
+            background-image: linear-gradient(to top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .main-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2.5rem;
+            z-index: 20;
+        }
+
+        .site-header {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+            z-index: 30;
+        }
+
+        .header-left {
+            text-align: left;
+        }
+
+        .header-center {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .nav-link {
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.5;
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(214, 214, 214, 0.98);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            z-index: 50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-nav-link {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            color: #1a1a1a;
+            transition: transform 0.2s;
+        }
+
+        .mobile-nav-link:hover {
+            transform: scale(1.05);
+        }
+
+        .title-wrapper {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 22vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .main-title {
+            font-size: 12vw;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 1;
+            color: #1a1a1a;
+            mix-blend-mode: difference;
+        }
+
+        .site-footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            z-index: 30;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 1rem;
+            font-weight: 500;
+            padding-bottom: 0.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            transition: opacity 0.2s;
+        }
+
+        .social-link:hover {
+            opacity: 0.5;
+        }
+
+        .social-link i {
+            font-size: 0.875rem;
+            width: 1rem;
+        }
+
+        .job-title-wrapper {
+            text-align: right;
+            line-height: 1;
+            max-width: 36rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .job-title {
+            font-size: 3.75rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            min-height: 100vh;
+            width: 100vw;
+            background-color: #111111;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3.5rem 5rem;
+            position: relative;
+        }
+
+        .intro-tag {
+            color: #e25c3d;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .intro-main-text {
+            font-size: 3.8vw;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+            max-width: 78rem;
+            margin-top: auto;
+            margin-bottom: 2rem;
+        }
+
+        .intro-highlight {
+            color: #e25c3d;
+        }
+
+        .intro-sub-text {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #8c8c8c;
+            max-width: 35rem;
+            margin-left: auto;
+            text-align: left;
+            margin-bottom: 4rem;
+        }
+
+        .intro-btn-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: auto;
+        }
+
+        .intro-btn {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.85rem 2.25rem;
+            border-radius: 9999px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: #ffffff;
+        }
+
+        .intro-btn:hover {
+            background-color: #ffffff;
+            color: #111111;
+            border-color: #ffffff;
+        }
+
+        /* Expertise Section */
+        .team-section {
+            min-height: 100vh;
+            width: 100vw;
+            background-color: #ffffff;
+            color: #111111;
+            padding: 3.5rem 5rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .team-tag-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .team-tag {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e25c3d;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .team-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            background: #f3f4f6;
+            border: none;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #111111;
+            font-size: 1rem;
+        }
+
+        .nav-btn:hover {
+            background: #e25c3d;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        .team-header {
+            margin-bottom: 4rem;
+        }
+
+        .team-title {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            max-width: 70rem;
+        }
+
+        .team-title span {
+            color: #e25c3d;
+        }
+
+        /* Slider */
+        .team-slider-container {
+            display: flex;
+            gap: 2rem;
+            width: 100%;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            padding-bottom: 2rem;
+        }
+
+        .team-slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .team-card {
+            min-width: calc((100% - 6rem) / 4);
+            height: 35rem;
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            background-color: #f3f4f6;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .team-card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .team-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+            color: #ffffff;
+            z-index: 2;
+        }
+
+        .card-content {
+            transform: translateY(120px);
+            transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .team-card:hover .card-content {
+            transform: translateY(0);
+        }
+
+        .member-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .member-role {
+            font-size: 1rem;
+            color: #e25c3d;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .member-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 0;
+            transition: opacity 0.5s ease 0.1s;
+        }
+
+        .team-card:hover .member-desc {
+            opacity: 1;
+        }
+
+        /* CONTACT ME SECTION */
+        .contact-section {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4rem 2rem;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .contact-section {
+                flex-direction: row;
+                padding: 6rem 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .contact-section {
+                padding: 6rem 4rem;
+            }
+        }
+
+        .contact-bg-container {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-color: #000000;
+        }
+
+        .contact-bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .contact-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            flex-grow: 1;
+        }
+
+        @media (min-width: 768px) {
+            .contact-wrapper {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 6rem;
+            }
+        }
+
+        .contact-left-col {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .contact-left-col {
+                width: 50%;
+                gap: 2rem;
+            }
+        }
+
+        .contact-tag-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #e25c3d;
+        }
+
+        .contact-headers {
+            margin-top: 1.5rem;
+        }
+
+        .contact-main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        @media (min-width: 640px) {
+            .contact-main-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .contact-main-title {
+                font-size: 6rem;
+            }
+        }
+
+        .contact-main-title span {
+            color: #e25c3d;
+        }
+
+        .contact-sub-paragraph {
+            margin-top: 1.5rem;
+            color: #000000;
+            font-size: 1.25rem;
+            max-width: 28rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* Responsive Breakpoints for Team section */
+        @media (max-width: 1023px) {
+            .team-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .team-card {
+                min-width: 85vw;
+                height: 30rem;
+            }
+
+            .card-content {
+                transform: translateY(0);
+            }
+
+            .member-desc {
+                opacity: 1;
+            }
+
+            .team-title {
+                font-size: 2.5rem;
+            }
+
+            .team-nav {
+                display: none;
+            }
+
+            .main-container {
+                padding: 1.5rem;
+            }
+
+            .header-center,
+            .header-right {
+                display: none;
+            }
+
+            .site-header {
+                display: flex;
+                justify-content: space-between;
+                font-size: 1rem;
+            }
+
+            .hamburger-btn {
+                display: block;
+            }
+
+            .bg-image {
+                background-image: url('portfolio_header _photo.jpg');
+            }
+
+            .main-title {
+                font-size: 14vw;
+            }
+
+            .intro-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .intro-main-text {
+                font-size: 2.25rem;
+                padding: 0 1rem;
+                text-align: center;
+            }
+
+            .intro-sub-text {
+                font-size: 0.95rem;
+                text-align: center;
+                padding: 0 2rem;
+                margin: 0 auto 3rem auto;
+            }
+
+            .intro-btn {
+                background-color: #FFFFFF;
+                color: #000000;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .job-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .title-wrapper {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-section" id="top">
+        <div class="bg-image"></div>
+        <div class="bottom-gradient"></div>
+
+        <main class="main-container">
+            <header class="site-header">
+                <div class="header-left">© IMAN HEYDARI</div>
+                <nav class="header-center">
+                    <a href="#projects" data-scroll-target=".team-section" class="nav-link">Projects</a>
+                    <a href="#about" data-scroll-target=".intro-section" class="nav-link">About</a>
+                </nav>
+                <div class="header-right">
+                    <a href="#contact" data-scroll-target=".contact-section" class="nav-link">Contact</a>
+                </div>
+                <button class="hamburger-btn" id="openMenu" type="button" aria-label="Open Menu" aria-expanded="false"
+                    aria-controls="mobileMenu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </header>
+
+            <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <button class="close-btn" id="closeMenu" type="button" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <a href="#projects" class="mobile-nav-link" data-scroll-target=".team-section">Projects</a>
+                <a href="#about" class="mobile-nav-link" data-scroll-target=".intro-section">About</a>
+                <a href="#contact" class="mobile-nav-link" data-scroll-target=".contact-section">Contact</a>
+            </div>
+
+            <div class="title-wrapper">
+                <h1 class="main-title">Iman Heydari</h1>
+            </div>
+
+            <footer class="site-footer">
+                <div class="social-links">
+                    <a href="https://github.com/Imanhri" target="_blank" class="social-link"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="mailto:iman.haydari@gmail.com" class="social-link"><i class="fa-regular fa-envelope"></i>
+                        Email</a>
+                    <a href="https://www.instagram.com/imaneheydari" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                </div>
+                <div class="job-title-wrapper">
+                    <h2 class="job-title">// Software Designer<br>Student</h2>
+                </div>
+            </footer>
+        </main>
+    </section>
+
+    <section class="intro-section" id="about">
+        <div class="intro-tag">// ABOUT ME</div>
+        <div class="intro-main-text">
+            Hello! I'm Iman. A <span class="intro-highlight">Software Design (B.Sc.) student</span> at TH Aschaffenburg
+            with a focus on <span class="intro-highlight">Data Science, Human-Machine Interaction and IT
+                Security</span>.
+            My background combines hands-on precision with creative digital thinking.
+        </div>
+        <div class="intro-sub-text">
+            With a passion for crafting intuitive user experiences, I blend my technical skills with a designer's eye to
+            create solutions that are both functional and visually engaging.
+            I thrive on turning complex problems into elegant, user-friendly designs.
+        </div>
+        <div class="intro-btn-wrapper">
+            <button class="intro-btn" type="button" data-scroll-target=".team-section">See my Works</button>
+        </div>
+    </section>
+
+    <section class="team-section" id="projects">
+        <div class="team-tag-row">
+            <div class="team-tag">// MY PROJECTS</div>
+            <div class="team-nav">
+                <button class="nav-btn" id="slideLeft" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="nav-btn" id="slideRight" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="team-header">
+            <h2 class="team-title">These are my <span>Projects</span>, which showcase my <span>skills</span> and
+                <span>experience</span> for software design during my studies.
+            </h2>
+        </div>
+
+        <div class="team-slider-container" id="teamSlider">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1617783919141-8417358d4e29?q=80&w=1035&auto=format&fit=crop"
+                    alt="Klick dich schlau" loading="lazy" decoding="async">
+                <div class="team-card-overlay">
+                    <div class="card-content">
+                        <h3 class="member-name">Klick dich schlau</h3>
+                        <p class="member-role">Game Design</p>
+                        <p class="member-desc">Interactive learning game developed with the Godot Engine as a team
+                            project. Focus on UI design, game mechanics in GDScript and intuitive controls to enhance
+                            user experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=2070&auto=format&fit=crop"
+                    alt="BCI Hackathon" loading="lazy" decoding="async">
+                <div class="team-card-overlay">
+                    <div class="card-content">
+                        <h3 class="member-name">BCI Hackathon</h3>
+                        <p class="member-role">BCI / EEG</p>
+                        <p class="member-desc">Real-time Brain-Computer Interface control for a toy car based on EEG
+                            signals. Signal processing to translate neural patterns into precise control commands —
+                            successfully demonstrated in competition.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+                    alt="Web Project" loading="lazy" decoding="async">
+                <div class="team-card-overlay">
+                    <div class="card-content">
+                        <h3 class="member-name">Web Design Project</h3>
+                        <p class="member-role">Web Design</p>
+                        <p class="member-desc">Conception and design of modern web interfaces. Application of design
+                            principles to optimise user guidance with a focus on clean structure and aesthetic quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+                    alt="Pomodoro App" loading="lazy" decoding="async">
+                <div class="team-card-overlay">
+                    <div class="card-content">
+                        <h3 class="member-name">Pomodoro App</h3>
+                        <p class="member-role">Console App</p>
+                        <p class="member-desc">A simple Java console application to support the Pomodoro technique.
+                            Helps manage focused work sessions and breaks through a clean command-line interface.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop"
+                    alt="Music Library" loading="lazy" decoding="async">
+                <div class="team-card-overlay">
+                    <div class="card-content">
+                        <h3 class="member-name">Music Library</h3>
+                        <p class="member-role">Data Management</p>
+                        <p class="member-desc">A Java console program demonstrating the management of a music library as
+                            a team project. Covers CRUD operations, data structures and collaborative software design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+
+        <div class="contact-bg-container">
+            <img src="contact_me.jpg" alt="Contact Background" class="contact-bg-image" loading="lazy" decoding="async">
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-left-col">
+                <div class="contact-tag-line">
+                    <span>// CONTACT ME</span>
+                </div>
+
+                <div class="contact-headers">
+                    <h2 class="contact-main-title">
+                        Let's build<br>something<br><span>extraordinary.</span>
+                    </h2>
+                    <p class="contact-sub-paragraph">
+                        Whether it's an internship, working student position, collaboration or just a conversation about
+                        Software Design — I'm always open to connect.<br>
+                        <br><b>Email:</b> <a href="mailto:iman.haydari@gmail.com" class="social-link">iman.haydari@gmail.com</a><br>
+                        <b>GitHub:</b> <a href="https://github.com/imanhri" target="_blank" class="social-link">github.com/imanhri</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const teamSlider = document.getElementById('teamSlider');
+        const slideLeftBtn = document.getElementById('slideLeft');
+        const slideRightBtn = document.getElementById('slideRight');
+
+        const setMobileMenuState = (isOpen) => {
+            mobileMenu.classList.toggle('active', isOpen);
+            mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+            openMenuBtn.setAttribute('aria-expanded', String(isOpen));
+        };
+
+        const scrollToSection = (targetSelector) => {
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setMobileMenuState(false);
+        };
+
+        document.querySelectorAll('[data-scroll-target]').forEach((control) => {
+            control.addEventListener('click', (event) => {
+                const targetSelector = control.getAttribute('data-scroll-target');
+                if (!targetSelector) return;
+                event.preventDefault();
+                scrollToSection(targetSelector);
+            });
+        });
+
+        openMenuBtn.addEventListener('click', () => setMobileMenuState(true));
+        closeMenuBtn.addEventListener('click', () => setMobileMenuState(false));
+
+        window.closeMenuFunc = () => setMobileMenuState(false);
+
+        slideLeftBtn.addEventListener('click', () => {
+            teamSlider.scrollBy({ left: -400, behavior: 'smooth' });
+        });
+
+        slideRightBtn.addEventListener('click', () => {
+            teamSlider.scrollBy({ left: 400, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+
+</html>
