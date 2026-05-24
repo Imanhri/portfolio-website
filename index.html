@@ -1,234 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IMAN HEYDARI | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="photos/favicon.png">
-    <link rel="stylesheet" href="style.css">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="photos/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="inner-cursor"></div>
     <div class="outer-cursor"></div>
 
     <section class="hero-section" id="top">
-        <div class="bg-image"></div>
-        <div class="bottom-gradient"></div>
+      <div class="bg-image"></div>
+      <div class="bottom-gradient"></div>
 
-        <main class="main-container">
-            <header class="site-header">
-                <div class="header-left"><a href="https://imanheydari.com" class="nav-link">// Iman Heydari</a></div>
-                <nav class="header-center">
-                    <a href="#projects" data-scroll-target=".team-section" class="nav-link">Projects</a>
-                    <a href="#about" data-scroll-target=".intro-section" class="nav-link">About</a>
-                </nav>
-                <div class="header-right">
-                    <a href="#contact" data-scroll-target=".contact-section" class="nav-link">Contact</a>
-                </div>
-                <button class="hamburger-btn" id="openMenu" type="button" aria-label="Open Menu" aria-expanded="false"
-                    aria-controls="mobileMenu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </header>
+      <main class="main-container">
+        <header class="site-header">
+          <div class="header-left">
+            <a href="https://imanheydari.com" class="nav-link"
+              >// Iman Heydari</a
+            >
+          </div>
+          <nav class="header-center">
+            <a
+              href="#projects"
+              data-scroll-target=".team-section"
+              class="nav-link"
+              >Projects</a
+            >
+            <a
+              href="#about"
+              data-scroll-target=".intro-section"
+              class="nav-link"
+              >About</a
+            >
+          </nav>
+          <div class="header-right">
+            <a
+              href="#contact"
+              data-scroll-target=".contact-section"
+              class="nav-link"
+              >Contact</a
+            >
+          </div>
+          <button
+            class="hamburger-btn"
+            id="openMenu"
+            type="button"
+            aria-label="Open Menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </header>
 
-            <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-                <button class="close-btn" id="closeMenu" type="button" aria-label="Close Menu">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <a href="#projects" class="mobile-nav-link" data-scroll-target=".team-section">Projects</a>
-                <a href="#about" class="mobile-nav-link" data-scroll-target=".intro-section">About</a>
-                <a href="#contact" class="mobile-nav-link" data-scroll-target=".contact-section">Contact</a>
-            </div>
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+          <button
+            class="close-btn"
+            id="closeMenu"
+            type="button"
+            aria-label="Close Menu"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <a
+            href="#projects"
+            class="mobile-nav-link"
+            data-scroll-target=".team-section"
+            >Projects</a
+          >
+          <a
+            href="#about"
+            class="mobile-nav-link"
+            data-scroll-target=".intro-section"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="mobile-nav-link"
+            data-scroll-target=".contact-section"
+            >Contact</a
+          >
+        </div>
 
-            <div class="title-wrapper">
-                <h1 class="main-title">Iman Heydari</h1>
-            </div>
+        <div class="title-wrapper">
+          <h1 class="main-title">Iman Heydari</h1>
+        </div>
 
-            <footer class="site-footer">
-                <div class="social-links">
-                    <a href="https://github.com/Imanhri" target="_blank" class="social-link"><i
-                            class="fa-brands fa-github"></i>GitHub</a>
-                    <a href="mailto:iman.haydari@gmail.com" class="social-link"><i class="fa-regular fa-envelope"></i>
-                        Email</a>
-                    <a href="https://www.instagram.com/imaneheydari" target="_blank" class="social-link"><i
-                            class="fa-brands fa-instagram"></i> Instagram</a>
-                </div>
-                <div class="job-title-wrapper">
-                    <h2 class="job-title">// Software Designer<br>Student</h2>
-                </div>
-            </footer>
-        </main>
+        <footer class="site-footer">
+          <div class="social-links">
+            <a
+              href="https://github.com/Imanhri"
+              target="_blank"
+              class="social-link"
+              ><i class="fa-brands fa-github"></i>GitHub</a
+            >
+            <a href="mailto:iman.haydari@gmail.com" class="social-link"
+              ><i class="fa-regular fa-envelope"></i> Email</a
+            >
+            <a
+              href="https://www.instagram.com/imaneheydari"
+              target="_blank"
+              class="social-link"
+              ><i class="fa-brands fa-instagram"></i> Instagram</a
+            >
+          </div>
+          <div class="job-title-wrapper">
+            <h2 class="job-title">// Software Designer<br />Student</h2>
+          </div>
+        </footer>
+      </main>
     </section>
 
     <section class="intro-section" id="about">
-        <div class="intro-tag">// ABOUT ME</div>
-        <div class="intro-main-text">
-            Hello! I'm Iman. A <span class="intro-highlight">Software Design (B.Sc.) student</span> at Aschaffenburg
-            University of Applied Sciences
-            with a focus on <span class="intro-highlight">Data Science and IT
-                Security</span>.
-            My background combines hands-on precision with creative digital thinking.
-        </div>
-        <div class="intro-sub-text">
-            My skills include working with Python, Java, and C++ for basic programming tasks,
-            as well as using HTML, CSS and JavaScript to build simple web pages.
-            I also work with Figma and Adobe Photoshop for UI ideas and visual design.
-            In addition, I've done a team project using the Godot Engine to create an interactive learning game,
-            where I focused on UI design and game mechanics using GDScript.
-        </div>
-        <div class="intro-btn-wrapper">
-            <button class="intro-btn" type="button" data-scroll-target=".team-section">See my Works</button>
-        </div>
+      <div class="intro-tag">// ABOUT ME</div>
+      <div class="intro-main-text">
+        Hello! I'm Iman. A
+        <span class="intro-highlight">Software Design (B.Sc.) student</span> at
+        Aschaffenburg University of Applied Sciences with a focus on
+        <span class="intro-highlight">Data Science and IT Security</span>. My
+        background combines hands-on precision with creative digital thinking.
+      </div>
+      <div class="intro-sub-text">
+        My skills include working with Python, Java, and C++ for basic
+        programming tasks, as well as using HTML, CSS and JavaScript to build
+        simple web pages. I also work with Figma and Adobe Photoshop for UI
+        ideas and visual design. In addition, I've done a team project using the
+        Godot Engine to create an interactive learning game, where I focused on
+        UI design and game mechanics using GDScript.
+      </div>
+      <div class="intro-btn-wrapper">
+        <button
+          class="intro-btn"
+          type="button"
+          data-scroll-target=".team-section"
+        >
+          See my Works
+        </button>
+      </div>
     </section>
 
     <section class="team-section" id="projects">
-        <div class="team-tag-row">
-            <div class="team-tag">// MY PROJECTS</div>
-            <div class="team-nav">
-                <button class="nav-btn" id="slideLeft" type="button"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="nav-btn" id="slideRight" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="team-tag-row">
+        <div class="team-tag">// MY PROJECTS</div>
+        <div class="team-nav">
+          <button class="nav-btn" id="slideLeft" type="button">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="nav-btn" id="slideRight" type="button">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="team-header">
+        <h2 class="team-title">
+          These are some of my <span>Projects</span>, which showcase my
+          <span>skills</span> and <span>experience</span> for software design
+          during my studies.
+        </h2>
+      </div>
+
+      <div class="team-slider-container" id="teamSlider">
+        <a
+          href="https://github.com/Imanhri/memorycardgame_godot"
+          target="_blank"
+          class="team-card"
+        >
+          <img
+            src="photos/kdsch.png"
+            alt="Klick dich schlau"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="team-card-overlay">
+            <div class="card-content">
+              <h3 class="member-name">Klick dich schlau</h3>
+              <p class="member-role">Game Design</p>
+              <p class="member-desc">
+                Interactive learning game developed with the Godot Engine as a
+                team project. Focus on UI design, game mechanics in GDScript and
+                intuitive controls to enhance user experience.
+              </p>
             </div>
-        </div>
+          </div>
+        </a>
 
-        <div class="team-header">
-            <h2 class="team-title">These are some of my <span>Projects</span>, which showcase my <span>skills</span> and
-                <span>experience</span> for software design during my studies.
-            </h2>
-        </div>
+        <a
+          href="https://github.com/Imanhri/hackathon-bci-brainwaves"
+          target="_blank"
+          class="team-card"
+        >
+          <img
+            src="photos/bci.jpeg"
+            alt="BCI Hackathon"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="team-card-overlay">
+            <div class="card-content">
+              <h3 class="member-name">BCI Hackathon</h3>
+              <p class="member-role">BCI / EEG</p>
+              <p class="member-desc">
+                Real-time Brain-Computer Interface control for a toy car based
+                on EEG signals. Signal processing to translate neural patterns
+                into precise control commands — successfully demonstrated in
+                competition.
+              </p>
+            </div>
+          </div>
+        </a>
 
-        <div class="team-slider-container" id="teamSlider">
+        <a
+          href="https://github.com/Imanhri/PS5xCleverBridge"
+          target="_blank"
+          class="team-card"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Web Project"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="team-card-overlay">
+            <div class="card-content">
+              <h3 class="member-name">Web Design Project</h3>
+              <p class="member-role">Web Design</p>
+              <p class="member-desc">
+                Conception and design of modern web interfaces. Application of
+                design principles to optimise user guidance with a focus on
+                clean structure and aesthetic quality.
+              </p>
+            </div>
+          </div>
+        </a>
 
-            <a href="https://github.com/Imanhri/memorycardgame_godot" target="_blank" class="team-card">
-                <img src="photos/kdsch.png" alt="Klick dich schlau" loading="lazy" decoding="async">
-                <div class="team-card-overlay">
-                    <div class="card-content">
-                        <h3 class="member-name">Klick dich schlau</h3>
-                        <p class="member-role">Game Design</p>
-                        <p class="member-desc">
-                            Interactive learning game developed with the Godot Engine as a team
-                            project. Focus on UI design, game mechanics in GDScript and intuitive
-                            controls to enhance user experience.
-                        </p>
-                    </div>
-                </div>
-            </a>
+        <a
+          href="https://github.com/Imanhri/Pomodoro-App"
+          target="_blank"
+          class="team-card"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+            alt="Pomodoro App"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="team-card-overlay">
+            <div class="card-content">
+              <h3 class="member-name">Pomodoro App</h3>
+              <p class="member-role">Console App</p>
+              <p class="member-desc">
+                A simple Java console application to support the Pomodoro
+                technique. Helps manage focused work sessions and breaks through
+                a clean command-line interface.
+              </p>
+            </div>
+          </div>
+        </a>
 
-            <a href="https://github.com/Imanhri/hackathon-bci-brainwaves" target="_blank" class="team-card">
-                <img src="photos/bci.jpeg" alt="BCI Hackathon" loading="lazy" decoding="async">
-                <div class="team-card-overlay">
-                    <div class="card-content">
-                        <h3 class="member-name">BCI Hackathon</h3>
-                        <p class="member-role">BCI / EEG</p>
-                        <p class="member-desc">
-                            Real-time Brain-Computer Interface control for a toy car based on EEG
-                            signals. Signal processing to translate neural patterns into precise
-                            control commands — successfully demonstrated in competition.
-                        </p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://github.com/Imanhri/PS5xCleverBridge" target="_blank" class="team-card">
-                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Web Project" loading="lazy" decoding="async">
-                <div class="team-card-overlay">
-                    <div class="card-content">
-                        <h3 class="member-name">Web Design Project</h3>
-                        <p class="member-role">Web Design</p>
-                        <p class="member-desc">
-                            Conception and design of modern web interfaces. Application of design
-                            principles to optimise user guidance with a focus on clean structure
-                            and aesthetic quality.
-                        </p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://github.com/Imanhri/Pomodoro-App" target="_blank" class="team-card">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
-                    alt="Pomodoro App" loading="lazy" decoding="async">
-                <div class="team-card-overlay">
-                    <div class="card-content">
-                        <h3 class="member-name">Pomodoro App</h3>
-                        <p class="member-role">Console App</p>
-                        <p class="member-desc">
-                            A simple Java console application to support the Pomodoro technique.
-                            Helps manage focused work sessions and breaks through a clean
-                            command-line interface.
-                        </p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://github.com/Imanhri/music_library" target="_blank" class="team-card">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop"
-                    alt="Music Library" loading="lazy" decoding="async">
-                <div class="team-card-overlay">
-                    <div class="card-content">
-                        <h3 class="member-name">Music Library</h3>
-                        <p class="member-role">Data Management</p>
-                        <p class="member-desc">
-                            A Java console program demonstrating the management of a music library
-                            as a team project. Covers CRUD operations, data structures and
-                            collaborative software design.
-                        </p>
-                    </div>
-                </div>
-            </a>
-        </div>
+        <a
+          href="https://github.com/Imanhri/music_library"
+          target="_blank"
+          class="team-card"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop"
+            alt="Music Library"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="team-card-overlay">
+            <div class="card-content">
+              <h3 class="member-name">Music Library</h3>
+              <p class="member-role">Data Management</p>
+              <p class="member-desc">
+                A Java console program demonstrating the management of a music
+                library as a team project. Covers CRUD operations, data
+                structures and collaborative software design.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     </section>
 
     <section class="contact-section" id="contact">
+      <div class="contact-bg-container">
+        <img
+          src="photos/contact_me.jpg"
+          alt="Contact Background"
+          class="contact-bg-image"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
 
-        <div class="contact-bg-container">
-            <img src="photos/contact_me.jpg" alt="Contact Background" class="contact-bg-image" loading="lazy"
-                decoding="async">
+      <div class="contact-wrapper">
+        <div class="contact-left-col">
+          <div class="contact-tag-line">
+            <span>// CONTACT ME</span>
+          </div>
+
+          <div class="contact-headers">
+            <h2 class="contact-main-title">
+              Let's build<br />something<br /><span>extraordinary.</span>
+            </h2>
+            <p class="contact-sub-paragraph">
+              Whether it's an internship, working student position,
+              collaboration or just a conversation about Software Design — I'm
+              always open to connect.<br />
+              <br /><b>Email:</b>
+              <a href="mailto:iman.haydari@gmail.com" class="social-link"
+                >iman.haydari@gmail.com</a
+              ><br />
+              <b>Linktree:</b>
+              <a
+                href="https://linktr.ee/Imaneheydari"
+                target="_blank"
+                class="social-link"
+                >linktr.ee/imaneheydari</a
+              >
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="contact-wrapper">
-            <div class="contact-left-col">
-                <div class="contact-tag-line">
-                    <span>// CONTACT ME</span>
-                </div>
-
-                <div class="contact-headers">
-                    <h2 class="contact-main-title">
-                        Let's build<br>something<br><span>extraordinary.</span>
-                    </h2>
-                    <p class="contact-sub-paragraph">
-                        Whether it's an internship, working student position, collaboration or just a conversation about
-                        Software Design — I'm always open to connect.<br>
-                        <br><b>Email:</b> <a href="mailto:iman.haydari@gmail.com"
-                            class="social-link">iman.haydari@gmail.com</a><br>
-                        <b>Linktree:</b> <a href="https://linktr.ee/Imaneheydari" target="_blank"
-                            class="social-link">linktr.ee/imaneheydari</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <section class="footer-section">
-            <footer class="footer">
-                <p>&copy; Iman Heydari | Made in Hanau, Germany</p>
-            </footer>
-        </section>
-
+      <section class="footer-section">
+        <footer class="footer">
+          <p>&copy; Iman Heydari | Made in Hanau, Germany</p>
+        </footer>
+      </section>
     </section>
 
-    
-
     <script src="script.js" defer></script>
-
-</body>
-
+  </body>
 </html>
