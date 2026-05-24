@@ -259,8 +259,8 @@ body {
 
 /* Intro Section */
 .intro-section {
-    height: 100vh;
-    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
     width: 100vw;
     background-color: #111111;
     color: #ffffff;
@@ -645,6 +645,15 @@ body {
 
 /* Responsive Breakpoints for Team section */
 @media (max-width: 1023px) {
+    .inner-cursor,
+    .outer-cursor {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+
     .team-section {
         padding: 4rem 1.5rem;
         min-height: auto;
@@ -702,8 +711,8 @@ body {
 
     .intro-section {
         padding: 4rem 1.5rem;
-        height: 100vh;
-        height: 100dvh;
+        min-height: 100vh;
+        min-height: 100dvh;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -740,10 +749,6 @@ body {
 @media (max-width: 640px) {
     .job-title {
         font-size: 2.25rem;
-    }
-
-    .intro-btn-wrapper {
-        margin-bottom: 1rem;
     }
 }
 
