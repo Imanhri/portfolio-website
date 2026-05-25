@@ -10,7 +10,7 @@ body {
   cursor: none;
 }
 
-body a,button {
+body a {
   cursor: none;
 }
 
@@ -566,34 +566,6 @@ body a,button {
   width: 100%;
   height: 100%;
   position: relative;
-}
-
-.scroll-top-btn {
-  position: absolute;
-  right: 5rem;
-  background: #111111;
-  border: none;
-  color: #ffffff;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  font-size: 0.85rem;
-}
-
-.scroll-top-btn:hover {
-  background: #e25c3d;
-  color: #ffffff;
-}
-
-@media (max-width: 1023px) {
-  .scroll-top-btn {
-    right: 1.5rem;
-  }
 }
 
 @media (min-width: 768px) {
