@@ -10,6 +10,10 @@ body {
   cursor: none;
 }
 
+body a,button {
+  cursor: none;
+}
+
 /* Cursor Styles */
 .inner-cursor {
   position: fixed;
