@@ -44,8 +44,9 @@ slideRightBtn.addEventListener("click", () => {
 const innerCursor = document.querySelector(".inner-cursor");
 const outerCursor = document.querySelector(".outer-cursor");
 const teamCards = document.querySelectorAll(".team-card");
+const introBtns = document.querySelectorAll(".intro-btn");
 
-let activeSnappedCard = null;
+let activeSnappedElement = null;
 
 document.addEventListener("mousemove", moveCursor);
 
@@ -56,8 +57,8 @@ function moveCursor(e) {
   innerCursor.style.left = `${x}px`;
   innerCursor.style.top = `${y}px`;
 
-  if (activeSnappedCard) {
-    const rect = activeSnappedCard.getBoundingClientRect();
+  if (activeSnappedElement) {
+    const rect = activeSnappedElement.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
@@ -71,10 +72,10 @@ function moveCursor(e) {
   }
 }
 
-// Update cursor position during scrolling/sliding to keep it locked to the card
+// Update cursor position during scrolling/sliding to keep it locked to the active snapped element
 const updateSnappedPosition = () => {
-  if (activeSnappedCard) {
-    const rect = activeSnappedCard.getBoundingClientRect();
+  if (activeSnappedElement) {
+    const rect = activeSnappedElement.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
@@ -92,14 +93,16 @@ if (teamSlider) {
   });
 }
 
-// Snapping effect for Team Cards
-if (outerCursor && innerCursor && teamCards.length > 0) {
-  teamCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      activeSnappedCard = card;
+// Helper to set up snapping effect for elements
+const setupSnapping = (elements) => {
+  if (!outerCursor || !innerCursor || elements.length === 0) return;
+
+  elements.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      activeSnappedElement = element;
       outerCursor.classList.add("snapped");
 
-      const rect = card.getBoundingClientRect();
+      const rect = element.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
@@ -108,8 +111,9 @@ if (outerCursor && innerCursor && teamCards.length > 0) {
       outerCursor.style.width = `${rect.width}px`;
       outerCursor.style.height = `${rect.height}px`;
 
-      // Match card's border radius and set custom color/border
-      outerCursor.style.borderRadius = "1.5rem";
+      // Match element's border radius dynamically and set custom color/border
+      const computedRadius = window.getComputedStyle(element).borderRadius;
+      outerCursor.style.borderRadius = computedRadius;
       outerCursor.style.borderColor = "#e25c3d";
       outerCursor.style.borderWidth = "3px";
 
@@ -117,8 +121,8 @@ if (outerCursor && innerCursor && teamCards.length > 0) {
       innerCursor.style.transform = "translate(-50%, -50%) scale(0.5)";
     });
 
-    card.addEventListener("mouseleave", () => {
-      activeSnappedCard = null;
+    element.addEventListener("mouseleave", () => {
+      activeSnappedElement = null;
       outerCursor.classList.remove("snapped");
 
       // Reset styles so CSS transitions handle the collapse smoothly
@@ -131,4 +135,8 @@ if (outerCursor && innerCursor && teamCards.length > 0) {
       innerCursor.style.transform = "";
     });
   });
-}
+};
+
+// Apply snapping effect to team cards and the intro button
+setupSnapping(teamCards);
+setupSnapping(introBtns);
